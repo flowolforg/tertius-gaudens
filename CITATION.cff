@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the accompanying paper."
+title: "tertius-gaudens: Mining scientific disagreement to time research entry"
+authors:
+  - family-names: "von Hilgers"
+    given-names: "Philipp"
+year: 2026
+url: "https://github.com/flowolforg/tertius-gaudens"
+preferred-citation:
+  type: article
+  title: "Where Should The AI Scientist Land — and When?"
+  authors:
+    - family-names: "von Hilgers"
+      given-names: "Philipp"
+  year: 2026
+  notes: "arXiv preprint; identifier to be added upon announcement."
