@@ -1,0 +1,254 @@
+[
+ {
+  "corpusid": 247778764,
+  "title": "Training Compute-Optimal Large Language Models",
+  "publicationdate": "2022-03-29",
+  "year": 2022,
+  "citationcount": 1571,
+  "contextcount": 10,
+  "summary_of_disagreement": "The paper strongly disagrees with the conclusions of [23], particularly regarding the optimal training size for large models, suggesting that their analysis leads to different results and that larger models should be trained with more tokens than recommended by [23]."
+ },
+ {
+  "corpusid": 225094178,
+  "title": "Scaling Laws for Autoregressive Generative Modeling",
+  "publicationdate": "2020-10-28",
+  "year": 2020,
+  "citationcount": 345,
+  "contextcount": 10,
+  "summary_of_disagreement": "The paper indicates a disagreement with the findings of [KMH20] regarding the optimal aspect ratio for different domains, suggesting that math, images, and videos prefer much deeper models compared to language, where [KMH20] suggests a different optimal aspect ratio."
+ },
+ {
+  "corpusid": 266818336,
+  "title": "DeepSeek LLM: Scaling Open-Source Language Models with Longtermism",
+  "publicationdate": "2024-01-05",
+  "year": 2024,
+  "citationcount": 181,
+  "contextcount": 7,
+  "summary_of_disagreement": "The paper highlights that early works on scaling laws (Hoffmann et al., 2022; Kaplan et al., 2020) have reached varying conclusions, indicating a lack of consensus on the applicability of scaling laws and the optimal batch size, which contradicts some earlier findings."
+ },
+ {
+  "corpusid": 246473179,
+  "title": "Unified Scaling Laws for Routed Language Models",
+  "publicationdate": "2022-02-02",
+  "year": 2022,
+  "citationcount": 148,
+  "contextcount": 10,
+  "summary_of_disagreement": "The paper provides evidence arguing against a proposed equation by Kaplan et al. [2020], indicating a strong disagreement with their formulation."
+ },
+ {
+  "corpusid": 258888192,
+  "title": "Scaling Data-Constrained Language Models",
+  "publicationdate": "2023-05-25",
+  "year": 2023,
+  "citationcount": 145,
+  "contextcount": 6,
+  "summary_of_disagreement": "The paper disagrees with prior work [46] regarding the use of early stopping and the assumption of unlimited data for scaling, suggesting that these practices may not be optimal."
+ },
+ {
+  "corpusid": 247625205,
+  "title": "What Language Model to Train if You Have One Million GPU Hours?",
+  "publicationdate": "2022-10-27",
+  "year": 2022,
+  "citationcount": 92,
+  "contextcount": 9,
+  "summary_of_disagreement": "The paper indicates disagreement with Kaplan et al. (2020) regarding the effectiveness of sparse attention layers at the 100B+ scale, stating that they provide negligible compute savings."
+ },
+ {
+  "corpusid": 237532682,
+  "title": "Scaling Laws for Neural Machine Translation",
+  "publicationdate": "2021-09-16",
+  "year": 2021,
+  "citationcount": 89,
+  "contextcount": 9,
+  "summary_of_disagreement": "The paper presents a strong disagreement with the findings of Kaplan et al. (2020) regarding the evaluation on different test sets, suggesting that it merely acts as a scaling penalty rather than affecting the scaling behavior predictably."
+ },
+ {
+  "corpusid": 262824542,
+  "title": "Small-scale proxies for large-scale Transformer training instabilities",
+  "publicationdate": "2023-09-25",
+  "year": 2023,
+  "citationcount": 55,
+  "contextcount": 3,
+  "summary_of_disagreement": "The paper expresses disagreement with prior works on two fronts: it does not use weight tying of the first and last layer, contrasting with the approach in reference [37], and it focuses on predicting instabilities rather than primarily on scaling trends related to loss, which contrasts with the focus of previous works cited as [27, 22]."
+ },
+ {
+  "corpusid": 267499809,
+  "title": "Scaling Laws for Downstream Task Performance of Large Language Models",
+  "publicationdate": "2024-02-06",
+  "year": 2024,
+  "citationcount": 24,
+  "contextcount": 6,
+  "summary_of_disagreement": "The paper disagrees with the scaling behavior of BLEU score, stating that it follows a log-law rather than the power-law scaling observed for cross-entropy and perplexity."
+ },
+ {
+  "corpusid": 268033327,
+  "title": "Actions Speak Louder than Words: Trillion-Parameter Sequential Transducers for Generative Recommendations",
+  "publicationdate": "2024-02-27",
+  "year": 2024,
+  "citationcount": 21,
+  "contextcount": 6,
+  "summary_of_disagreement": "The paper indicates that while LLMs have been explored for recommendation tasks, they have not yet outperformed traditional collaborative filtering methods in large-scale settings, suggesting a limitation of LLMs compared to established methods."
+ },
+ {
+  "corpusid": 246823711,
+  "title": "Scaling Laws Under the Microscope: Predicting Transformer Performance from Small Scale Experiments",
+  "publicationdate": "2022-02-13",
+  "year": 2022,
+  "citationcount": 16,
+  "contextcount": 11,
+  "summary_of_disagreement": "The paper presents a disagreement with Kaplan et al. (2020) by stating that shape also plays a role in finetuning performance, rather than size alone."
+ },
+ {
+  "corpusid": 268351635,
+  "title": "Unraveling the Mystery of Scaling Laws: Part I",
+  "publicationdate": "2024-03-11",
+  "year": 2024,
+  "citationcount": 15,
+  "contextcount": 10,
+  "summary_of_disagreement": "The paper indicates a disagreement with the original scaling law paper by OpenAI ([KMH + 20]) on the aspect of how much the training data size should be scaled. It mentions that [HBM + 22] claimed the training data size should be scaled much more than the recommendation in [KMH + 20], suggesting a divergence in views on the optimal scaling of training data size."
+ },
+ {
+  "corpusid": 270764838,
+  "title": "Resolving Discrepancies in Compute-Optimal Scaling of Language Models",
+  "publicationdate": "2024-06-27",
+  "year": 2024,
+  "citationcount": 11,
+  "contextcount": 10,
+  "summary_of_disagreement": "The paper shows disagreement with Kaplan et al. regarding the scaling law discrepancy, attributing it to Kaplan et al.'s failure to tailor the learning rate schedule for each token budget and not accounting for the computational cost of the decoding layer. It also criticizes the constant-length warmup period used by Kaplan et al. as being too long for smaller models."
+ },
+ {
+  "corpusid": 268358466,
+  "title": "Algorithmic progress in language models",
+  "publicationdate": "2024-03-09",
+  "year": 2024,
+  "citationcount": 10,
+  "contextcount": 10,
+  "summary_of_disagreement": "The paper presents a strong disagreement with the previously dominant understanding of scaling laws as proposed by Kaplan et al. 2020, suggesting that Hoffmann et al. 2022 offers an improved scaling law for training language models."
+ },
+ {
+  "corpusid": 266693763,
+  "title": "Astraios: Parameter-Efficient Instruction Tuning Code Large Language Models",
+  "publicationdate": "2024-01-01",
+  "year": 2024,
+  "citationcount": 10,
+  "contextcount": 7,
+  "summary_of_disagreement": "The paper disagrees with Kaplan et al. (2020) regarding the relevance of the learning rate schedule in language model pre-training, suggesting that it may significantly impact scaling parameter-efficient models during fine-tuning."
+ },
+ {
+  "corpusid": 270063468,
+  "title": "gzip Predicts Data-dependent Scaling Laws",
+  "publicationdate": "2024-05-26",
+  "year": 2024,
+  "citationcount": 8,
+  "contextcount": 11,
+  "summary_of_disagreement": "The paper disagrees with Kaplan et al. (2020) and Rae et al. (2021) by stating that they overparameterized their models and that the compute-optimal frontier requires parameter and dataset size to be scaled equally, contrary to the previous scaling laws that suggested a 3x rate for parameters."
+ },
+ {
+  "corpusid": 258959511,
+  "title": "Honey, I Shrunk the Language: Language Model Behavior at Reduced Scale",
+  "publicationdate": "2023-05-26",
+  "year": 2023,
+  "citationcount": 7,
+  "contextcount": 11,
+  "summary_of_disagreement": "The paper indicates a divergence from previous observations regarding scaling laws as noted by Kaplan et al. (2020) and Hoffmann et al. (2022), suggesting a different approach to scaling models."
+ },
+ {
+  "corpusid": 253018582,
+  "title": "Automatic Document Selection for Efficient Encoder Pretraining",
+  "publicationdate": "2022-10-20",
+  "year": 2022,
+  "citationcount": 7,
+  "contextcount": 5,
+  "summary_of_disagreement": "The paper disagrees with the approach suggested by Kaplan et al., 2020, regarding scaling up models to fit dataset size. Instead, it highlights success in scaling down dataset sizes to efficiently fit and outperform larger datasets in fewer steps."
+ },
+ {
+  "corpusid": 256627582,
+  "title": "Evaluating Self-Supervised Learning via Risk Decomposition",
+  "publicationdate": "2023-02-06",
+  "year": 2023,
+  "citationcount": 7,
+  "contextcount": 4,
+  "summary_of_disagreement": "The paper strongly disagrees with the standard neural scaling laws proposed by Kaplan et al., 2020, and Rosenfeld et al., 2020, by demonstrating through Table 9 and subsequent analysis that their proposed scaling law predicts the performance of held-out models more accurately in all data settings."
+ },
+ {
+  "corpusid": 258170417,
+  "title": "nanoLM: an Affordable LLM Pre-training Benchmark via Accurate Loss Prediction across Scales",
+  "publicationdate": "2023-04-14",
+  "year": 2023,
+  "citationcount": 5,
+  "contextcount": 6,
+  "summary_of_disagreement": "The paper presents a disagreement with Kaplan et al. (2020) regarding the treatment of embedding sizes in scaling laws, arguing that their proposed \u001e Scaling method fits better when embedding sizes are included, contrary to Kaplan et al.'s approach."
+ },
+ {
+  "corpusid": 268417253,
+  "title": "Scaling Behavior of Machine Translation with Large Language Models under Prompt Injection Attacks",
+  "publicationdate": "2024-03-14",
+  "year": 2024,
+  "citationcount": 2,
+  "contextcount": 8,
+  "summary_of_disagreement": "The paper discusses the phenomenon of Inverse Scaling, where larger LLMs can perform worse in certain scenarios, contradicting the previously established notion that performance predictably increases with model size."
+ },
+ {
+  "corpusid": 273098170,
+  "title": "Training Language Models on Synthetic Edit Sequences Improves Code Synthesis",
+  "publicationdate": "2024-10-03",
+  "year": 2024,
+  "citationcount": 1,
+  "contextcount": 13,
+  "summary_of_disagreement": "The paper highlights that while large language models (LLMs) show strong performance, they suffer from issues like limited output diversity and prompt sensitivity, which contrasts with the competitive performance of smaller models in specific tasks."
+ },
+ {
+  "corpusid": 268820276,
+  "title": "The Fine Line: Navigating Large Language Model Pretraining with Down-streaming Capability Analysis",
+  "publicationdate": "2024-04-01",
+  "year": 2024,
+  "citationcount": 1,
+  "contextcount": 10,
+  "summary_of_disagreement": "The paper expresses skepticism about the universal applicability of the Scaling Law, highlighting that research into optimal allocation strategies for model and data size has led to varied conclusions, suggesting that the Scaling Law may not fully capture model capabilities, especially for downstream tasks."
+ },
+ {
+  "corpusid": 249538300,
+  "title": "Learning Non-Vacuous Generalization Bounds from Optimization",
+  "publicationdate": "2022-06-09",
+  "year": 2022,
+  "citationcount": 1,
+  "contextcount": 8,
+  "summary_of_disagreement": "The paper shows disagreement with the work of Zhang et al. (2017), who questioned the widely received wisdom about DNNs' ability to generalize by showing that DNNs can still achieve zero training error with randomly labeled examples, which apparently cannot generalize."
+ },
+ {
+  "corpusid": 270765130,
+  "title": "Time Matters: Scaling Laws for Any Budget",
+  "publicationdate": "2024-06-27",
+  "year": 2024,
+  "citationcount": 1,
+  "contextcount": 3,
+  "summary_of_disagreement": "The paper disagrees with Kaplan et al.'s method of estimating compute requirements based on FLOPs, arguing that FLOPs are a weak predictor of runtime."
+ },
+ {
+  "corpusid": 274981663,
+  "title": "HybGRAG: Hybrid Retrieval-Augmented Generation on Textual and Relational Knowledge Bases",
+  "publicationdate": "2024-12-20",
+  "year": 2024,
+  "citationcount": 0,
+  "contextcount": 12,
+  "summary_of_disagreement": "The paper critiques existing self-reflective LLM methods like ReAct for their implicit feedback mechanisms, suggesting they lack clear guidance for effective self-reflection, which contrasts with the proposed critic module that aims to improve performance."
+ },
+ {
+  "corpusid": 273233405,
+  "title": "Exploring the Readiness of Prominent Small Language Models for the Democratization of Financial Literacy",
+  "publicationdate": "2024-10-09",
+  "year": 2024,
+  "citationcount": 0,
+  "contextcount": 11,
+  "summary_of_disagreement": "The paper strongly disagrees with the notion that SLMs can match the performance of LLMs, stating that existing research indicates SLMs do not perform at the same level as LLMs."
+ },
+ {
+  "corpusid": 273185831,
+  "title": "Compression via Pre-trained Transformers: A Study on Byte-Level Multimodal Data",
+  "publicationdate": "2024-10-07",
+  "year": 2024,
+  "citationcount": 0,
+  "contextcount": 8,
+  "summary_of_disagreement": "The paper strongly disagrees with the findings of Delétang et al. (2024) regarding the performance of small pre-trained transformers compared to large language models (LLMs) in terms of compression on unseen data modalities, indicating a qualitative difference between small and large models."
+ }
+]
