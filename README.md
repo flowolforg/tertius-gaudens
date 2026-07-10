@@ -4,7 +4,7 @@
 
 This repository accompanies the paper [*Where Should The AI Scientist Land, and When?*](PAPER.md) (Deutsch: [PAPER.de.md](PAPER.de.md)) — the title a deliberate counterpoint to *The AI Scientist* (Sakana AI, *Nature* 2026). It contains every script and intermediate data dump needed to reproduce the empirical claims, so that others can check the findings independently.
 
-> **TL;DR** — Given a field's whole literature, where is an automated "AI scientist" best brought into play? We answer through the four-paper evolution of neural scaling laws, mapping each to a role: **Kaplan = A** (opens the direction), **Hoffmann = B-novel** (corrects it with new experiments), **Besiroglu = B-audit** (re-analyzes the corrector's data, finds its flaw), **DeepSeek = C** (re-optimizes the settled frame). The automatable roles are the **verifiable** ones — B-audit and C — not the **speculative** ones — A and B-novel — because search can substitute for insight only where an *oracle* exists. The chain is mined from the literature by deterministic bibliometrics plus one narrow use of AI: classifying each Semantic Scholar **in-text citation** as neutral / agreement / disagreement. Disagreement is a rare, high-fidelity signal (~5 % of *analyzed* edges) and functions as a hard gate.
+> **TL;DR** — Given a field’s whole literature, where is an automated "AI scientist" best brought into play? We answer through the four-paper evolution of neural scaling laws, mapping each to a role: **Kaplan = A** (opens the direction), **Hoffmann = B-novel** (corrects it with new experiments), **Besiroglu = B-audit** (re-analyzes the corrector’s data, finds its flaw), **DeepSeek = C** (re-optimizes the settled frame). The automatable roles are the **verifiable** ones — B-audit and C — not the **speculative** ones — A and B-novel — because search can substitute for insight only where an *oracle* exists. The chain is mined from the literature by deterministic bibliometrics plus one narrow use of AI: classifying each Semantic Scholar **in-text citation** as neutral / agreement / disagreement. Disagreement is a rare, high-fidelity signal (~5 % of *analyzed* edges) and functions as a hard gate.
 
 ---
 
@@ -19,7 +19,7 @@ This repository accompanies the paper [*Where Should The AI Scientist Land, and 
 
 **Disagreement is a rare, high-fidelity signal.** ~5 % of *analyzed* edges carry a disagreement label — a needle that functions as a hard gate. (Only 15.8 % of the graph was ever labeled, for cost; the batch was restricted to papers with a minimum citation footprint, so coverage is prominence-biased. See the paper, §4.3 / §5.3.)
 
-**The chain falls out of three scores.** Among the ~3,000 papers citing Kaplan, ranking the substantive critics by `citationcount` (reach), with `contextcount` as tie-breaker — the focus signal does its work in the gate, the ranking measures reach puts **Hoffmann #1 and DeepSeek #3** (Henighan, a side-theme, sits at #2), surfaced deterministically. External check: Wikipedia's *Neural scaling law* article independently canonizes Kaplan → Hoffmann → Besiroglu (the A → B-novel → B-audit spine); DeepSeek-as-C is the algorithm's own forward candidate, not established canon. See the paper, §4.2–§4.4.
+**The chain falls out of three scores.** Among the ~3,000 papers citing Kaplan, ranking the substantive critics by `citationcount` (reach), with `contextcount` as tie-breaker — the focus signal does its work in the gate, the ranking measures reach puts **Hoffmann #1 and DeepSeek #3** (Henighan, a side-theme, sits at #2), surfaced deterministically. External check: Wikipedia’s *Neural scaling law* article independently canonizes Kaplan → Hoffmann → Besiroglu (the A → B-novel → B-audit spine); DeepSeek-as-C is the algorithm’s own forward candidate, not established canon. See the paper, §4.2–§4.4.
 
 **Which roles can the AI take?** The two *verifiable* ones. The *speculative* corrector (B-novel) gets corrected: across 218 correctors, issuing a correction is associated with **~23 % more disagreement-per-citation received**, and Hoffmann is corrected by 7 later papers (Besiroglu among them). B-audit (re-analyzing existing data, cheap, checkable) and C (optimizing within the settled frame, verifiable against existing loss curves) are in reach; A (no oracle) and B-novel (speculative *and* needs a 400+-model cluster) are not. See the paper, §6.
 
@@ -27,10 +27,8 @@ This repository accompanies the paper [*Where Should The AI Scientist Land, and 
 
 ## Models used
 
-- `all-MiniLM-L6-v2` (sentence-transformers, 384-dim) — semantic embeddings.
 - **`gpt-4o-mini`** (OpenAI), run via the **Batch API** (JSON mode, temp 0.1) — the per-edge in-text stance: `agreement` / `disagreement` booleans + summaries, generated at ingest.
 - `claude-opus-4-8` — theme clustering, `confirming_correction` vs `rejection` framing, and per-in-text-context classification in this study.
-- `deepseek-chat` — full-text paper Q&A in the reference application (not used for the findings).
 
 ---
 
@@ -40,15 +38,15 @@ The scripts are **read-only** against a PostgreSQL mirror of the citation/discou
 
 ```bash
 export DATABASE_URL='postgresql://user:pass@host:port/db'
-pip install asyncpg anthropic        # anthropic only for the classifier
+pip install asyncpg anthropic # anthropic only for the classifier
 
 # §5.1 threshold calibration — citationcount percentiles
-python scripts/poc_research_ideas.py calibrate         # -> {p90:36, p95:68, p99:223}
+python scripts/poc_research_ideas.py calibrate # -> {p90:36, p95:68, p99:223}
 
 # §5.2 ranked A→B triads (gate + earliest-critic selector)
 # NOTE: top100 ranks A→B *triads* by a_citations × max(contextcount,1) × b_citations —
 # a separate triad score, not the per-seed critic ranking (citationcount, contextcount as tie-breaker).
-python scripts/poc_research_ideas.py top100            # -> top100.json (provided in data/)
+python scripts/poc_research_ideas.py top100 # -> top100.json (provided in data/)
 
 # §4.3 / §5.3 disagreement rarity & context-count distributions
 python scripts/diag_contextcount.py
@@ -56,7 +54,7 @@ python scripts/diag_contextcount.py
 # §5.2 velocity backtest (proxy 2): quarterly citation curves vs. same-age
 # cohort percentiles; estimates t_A (Kaplan > p99, sustained) and t_B
 # (Hoffmann > p95/p99, sustained). Result on this snapshot: t_A = 2020-Q3
-# (~6 months after Kaplan), t_B = 2022-Q2 (the quarter after Hoffmann's
+# (~6 months after Kaplan), t_B = 2022-Q2 (the quarter after Hoffmann’s
 # publication) — ~21 months before DeepSeek (2024-01) and ~24 months before
 # Besiroglu (2024-04). Output: data/backtest_velocity.csv / .png
 python scripts/backtest_velocity.py
@@ -78,35 +76,28 @@ Theme clustering and the velocity tables (§5.2) operate on `data/kaplan_critics
 A search-and-rank cascade over the citation graph — deterministic bibliometrics plus one narrow AI step (per-edge in-text **stance**, precomputed at ingest):
 
 ```
-  monitor all 314,690 papers
-       │
-       ▼
-  (1) DETECT landmark A            reception ≥ θ_A  (prospectively: velocity above field)
-       │  A emerges = Kaplan  (not queried — detected)
-       ▼
-  (2) SELECT substantive critics   among ~3,000 papers citing A, keep those that
-                                   engage A repeatedly (contextcount ≥ 3)
-                                   AND dispute it (disagreement = true)   → 28
-       ▼
-  (3) RANK by reach                citationcount (contextcount as tie-breaker)
-       │  #1 = B (Hoffmann)   #3 = candidate C (DeepSeek)
-       ▼
-  A → B → C   (recurse on B → auditor Besiroglu→Hoffmann);
-              thresholds R(A),R(B) + theme/type screen layered on top
+monitor all 314,690 papers
+│
+▼
+(1) DETECT landmark A     reception ≥ θ_A (prospectively: velocity above field)
+│                         A emerges = Kaplan (not queried — detected)
+▼
+(2) SELECT substantive critics   among ~3,000 papers citing A, keep those that
+                                 engage A repeatedly (contextcount ≥ 3)
+                                 AND dispute it (disagreement = true) → 28
+▼
+(3) RANK by reach         citationcount (contextcount as tie-breaker)
+│                         #1 = B (Hoffmann)   #3 = candidate C (DeepSeek)
+▼
+A → B → C   (recurse on B → auditor Besiroglu→Hoffmann);
+            thresholds R(A),R(B) + theme/type screen layered on top
 ```
 
 (A semantic search — `0.7·cosine(query,paper) + 0.3·min(1,cit/1000)` — is only a convenience for inspecting a *known* seed; the autonomous start is monitoring, not querying.)
 
 The two quantities that do the work — `contextcount` (repeated in-text engagement) and stance (disagreement) — are exactly what pick Hoffmann and DeepSeek out of thousands: they cite Kaplan *many times* and do so to *find a flaw*.
 
-The chain spans **two anchors**: Kaplan's critics give Hoffmann + DeepSeek, but the auditor **Besiroglu does not cite Kaplan** — it disputes Hoffmann, so it surfaces only when the walk re-anchors on Hoffmann. The paper formalizes this traversal as a **Markov chain on the discourse graph** (§4.6), where re-anchoring is automatic and the open frontier is the set of near-absorbing states.
-
-## Limitations (read these)
-
-1. **Selective coverage** — ~84 % of edges are unlabeled; an absent disagreement label usually means *"never analyzed,"* not *"no critique."* Treat openness as a confidence discount.
-2. **Live C-detection is a bet** — the method asserts the *absence* of a resolver; only time confirms it.
-3. **Single disagreement boolean** — does not separate confirming-corrector from total-rejecter, nor conceptual-correction from benchmark-superiority; `classify_disagreement_contexts.py` is the remedy.
-4. **Genre confounders not auto-filtered** (§5.4) — surveys, benchmarks, toolkits and model releases inflate the citation/velocity signal, and the disagreement signal screens them out on *neither* side (correctors are 9.6 % genre vs. 11.0 % of landmarks). Needs a semantic genre pre-filter + disagreement-*type* gate, not citation thresholds alone.
+The chain spans **two anchors**: Kaplan’s critics give Hoffmann + DeepSeek, but the auditor **Besiroglu does not cite Kaplan** — it disputes Hoffmann, so it surfaces only when the walk re-anchors on Hoffmann. The paper formalizes this traversal as a **Markov chain on the discourse graph** (§4.6), where re-anchoring is automatic and the open frontier is the set of near-absorbing states.
 
 ## License & citation
 
