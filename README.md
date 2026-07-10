@@ -2,7 +2,7 @@
 
 **Mining scientific disagreement to time research entry.**
 
-This repository accompanies the paper [*Where Should The AI Scientist Land, and When?*](PAPER.md) (Deutsch: [PAPER.de.md](PAPER.de.md)) — the title a deliberate counterpoint to *The AI Scientist* (Sakana AI, *Nature* 2026). It contains every script and intermediate data dump needed to reproduce the empirical claims, so that others can check the findings independently.
+This repository accompanies the paper [*Where Should The AI Scientist Land, and When?*](PAPER.md) — the title a deliberate counterpoint to *The AI Scientist* (Sakana AI, *Nature* 2026). It contains every script and intermediate data dump needed to reproduce the empirical claims, so that others can check the findings independently.
 
 > **TL;DR** — Given a field’s whole literature, where is an automated "AI scientist" best brought into play? We answer through the four-paper evolution of neural scaling laws, mapping each to a role: **Kaplan = A** (opens the direction), **Hoffmann = B-novel** (corrects it with new experiments), **Besiroglu = B-audit** (re-analyzes the corrector’s data, finds its flaw), **DeepSeek = C** (re-optimizes the settled frame). The automatable roles are the **verifiable** ones — B-audit and C — not the **speculative** ones — A and B-novel — because search can substitute for insight only where an *oracle* exists. The chain is mined from the literature by deterministic bibliometrics plus one narrow use of AI: classifying each Semantic Scholar **in-text citation** as neutral / agreement / disagreement. Disagreement is a rare, high-fidelity signal (~5 % of *analyzed* edges) and functions as a hard gate.
 
