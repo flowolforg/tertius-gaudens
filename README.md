@@ -21,7 +21,7 @@ This repository accompanies the paper [*Where Should The AI Scientist Land, and 
 
 **The chain falls out of three scores.** Among the ~3,000 papers citing Kaplan, ranking the substantive critics by `citationcount` (reach), with `contextcount` as tie-breaker — the focus signal does its work in the gate, the ranking measures reach puts **Hoffmann #1 and DeepSeek #3** (Henighan, a side-theme, sits at #2), surfaced deterministically. External check: Wikipedia’s *Neural scaling law* article independently canonizes Kaplan → Hoffmann → Besiroglu (the A → B-novel → B-audit spine); DeepSeek-as-C is the algorithm’s own forward candidate, not established canon. See the paper, §4.2–§4.4.
 
-**Which roles can the AI take?** The two *verifiable* ones. The *speculative* corrector (B-novel) gets corrected: across 218 correctors, issuing a correction is associated with **~23 % more disagreement-per-citation received**, and Hoffmann is corrected by 7 later papers (Besiroglu among them). B-audit (re-analyzing existing data, cheap, checkable) and C (optimizing within the settled frame, verifiable against existing loss curves) are in reach; A (no oracle) and B-novel (speculative *and* needs a 400+-model cluster) are not. See the paper, §6.
+**Which roles can the AI take?** The two *verifiable* ones. The *speculative* corrector (B-novel) gets corrected: across 218 correctors (operationally: papers with `citationcount ≥ 300` issuing a disagreement with `contextcount ≥ 3` at a landmark with `citationcount ≥ 1000`; “corrected” = target of any labeled disagreement), issuing a correction is associated with **~23 % more disagreement-per-citation received** than for the 1,818 remaining papers with `citationcount ≥ 300`, and Hoffmann is corrected by 7 later papers (Besiroglu among them). B-audit (re-analyzing existing data, cheap, checkable) and C (optimizing within the settled frame, verifiable against existing loss curves) are in reach; A (no oracle) and B-novel (speculative *and* needs a 400+-model cluster) are not. See the paper, §6.
 
 **Vintage / observation period:** the citation graph, discourse layer, and citation counts are co-dated **~January 2025**; case-study papers span **2020–2024**. Velocities use a `2025-01-01` reference date.
 
@@ -98,6 +98,21 @@ A → B → C   (recurse on B → auditor Besiroglu→Hoffmann);
 The two quantities that do the work — `contextcount` (repeated in-text engagement) and stance (disagreement) — are exactly what pick Hoffmann and DeepSeek out of thousands: they cite Kaplan *many times* and do so to *find a flaw*.
 
 The chain spans **two anchors**: Kaplan’s critics give Hoffmann + DeepSeek, but the auditor **Besiroglu does not cite Kaplan** — it disputes Hoffmann, so it surfaces only when the walk re-anchors on Hoffmann. The paper formalizes this traversal as a **Markov chain on the discourse graph** (§4.6), where re-anchoring is automatic and the open frontier is the set of near-absorbing states.
+
+## Independent reproduction
+
+Every quantitative claim in the paper has been reproduced once already — by an AI agent
+(Claude, Anthropic) in an isolated sandbox **without access to the source database**, using
+only the frozen snapshot and the unmodified scripts in this repository. The full protocol,
+including the claim-by-claim result table, is in [`AUDIT.md`](AUDIT.md). To repeat the
+reproduction yourself, see [`SNAPSHOT.md`](SNAPSHOT.md) (snapshot download, local Postgres
+restore, script invocations).
+
+## Related project
+
+[flowolf.org](https://flowolf.org) — the reference application over the same corpus and
+citation/discourse graph: semantic search across the 314,690-paper pool and inspection of
+disagreement sets (the convenience interface mentioned in §4.2 of the paper).
 
 ## License & citation
 
