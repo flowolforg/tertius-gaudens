@@ -25,7 +25,10 @@ source DB; `--no-abstracts` shrinks `papers.csv.gz` if needed).
 ## 2. Restore locally (one-time, ~5 minutes)
 
 ```bash
-# 1. download data/snapshot/* from the release and place under data/snapshot/
+# 1. download all assets of release v1.1 and reassemble the tarball
+cat tertius-snapshot-2025-01.tar.part-* > tertius-snapshot-2025-01.tar
+shasum -a 256 tertius-snapshot-2025-01.tar   # compare with tarball.sha256
+tar -xf tertius-snapshot-2025-01.tar -C data/   # -> data/snapshot/*.csv.gz + manifest.json
 # 2. start a throwaway Postgres
 docker run --name tertius-pg -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres:16
 # 3. load + verify against manifest
