@@ -26,5 +26,4 @@ Data notice: The files under data/ are derived works. They incorporate
 metadata from arXiv (arxiv.org) and from the Semantic Scholar Open Data
 Platform (Kinney et al., arXiv:2301.10140), the latter provided under the
 ODC-BY 1.0 license, which requires attribution. Any reuse of the data files
-must retain this attribution. The papers PAPER.md and PAPER.de.md are
-licensed CC BY 4.0.
+must retain this attribution. The paper PAPER.md is licensed CC BY 4.0.
