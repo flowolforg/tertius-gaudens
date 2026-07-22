@@ -1,0 +1,258 @@
+{
+  "note": "in-session Claude classification, sample n=12 disagreement edges (ctx 8-20), 128 contexts",
+  "per_edge": [
+    {
+      "citationid": "1695521732",
+      "n": 9,
+      "CRITICAL": 2,
+      "SUPPORTIVE": 2,
+      "NEUTRAL": 5,
+      "crit_share": 0.222,
+      "labels": [
+        "NEUTRAL",
+        "SUPPORTIVE",
+        "NEUTRAL",
+        "NEUTRAL",
+        "CRITICAL",
+        "SUPPORTIVE",
+        "NEUTRAL",
+        "CRITICAL",
+        "NEUTRAL"
+      ]
+    },
+    {
+      "citationid": "3331365886",
+      "n": 9,
+      "CRITICAL": 4,
+      "SUPPORTIVE": 0,
+      "NEUTRAL": 5,
+      "crit_share": 0.444,
+      "labels": [
+        "CRITICAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "CRITICAL",
+        "CRITICAL",
+        "NEUTRAL",
+        "CRITICAL",
+        "NEUTRAL",
+        "NEUTRAL"
+      ]
+    },
+    {
+      "citationid": "3468386720",
+      "n": 16,
+      "CRITICAL": 2,
+      "SUPPORTIVE": 2,
+      "NEUTRAL": 12,
+      "crit_share": 0.125,
+      "labels": [
+        "NEUTRAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "SUPPORTIVE",
+        "CRITICAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "SUPPORTIVE",
+        "NEUTRAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "CRITICAL"
+      ]
+    },
+    {
+      "citationid": "3631306439",
+      "n": 8,
+      "CRITICAL": 1,
+      "SUPPORTIVE": 4,
+      "NEUTRAL": 3,
+      "crit_share": 0.125,
+      "labels": [
+        "NEUTRAL",
+        "SUPPORTIVE",
+        "SUPPORTIVE",
+        "NEUTRAL",
+        "CRITICAL",
+        "SUPPORTIVE",
+        "NEUTRAL",
+        "SUPPORTIVE"
+      ]
+    },
+    {
+      "citationid": "3704295743",
+      "n": 8,
+      "CRITICAL": 2,
+      "SUPPORTIVE": 4,
+      "NEUTRAL": 2,
+      "crit_share": 0.25,
+      "labels": [
+        "SUPPORTIVE",
+        "SUPPORTIVE",
+        "SUPPORTIVE",
+        "SUPPORTIVE",
+        "CRITICAL",
+        "NEUTRAL",
+        "CRITICAL",
+        "NEUTRAL"
+      ]
+    },
+    {
+      "citationid": "3776476777",
+      "n": 10,
+      "CRITICAL": 3,
+      "SUPPORTIVE": 1,
+      "NEUTRAL": 6,
+      "crit_share": 0.3,
+      "labels": [
+        "NEUTRAL",
+        "CRITICAL",
+        "CRITICAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "CRITICAL",
+        "SUPPORTIVE"
+      ]
+    },
+    {
+      "citationid": "3897566339",
+      "n": 10,
+      "CRITICAL": 2,
+      "SUPPORTIVE": 2,
+      "NEUTRAL": 6,
+      "crit_share": 0.2,
+      "labels": [
+        "NEUTRAL",
+        "NEUTRAL",
+        "SUPPORTIVE",
+        "NEUTRAL",
+        "NEUTRAL",
+        "CRITICAL",
+        "CRITICAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "SUPPORTIVE"
+      ]
+    },
+    {
+      "citationid": "3985064469",
+      "n": 18,
+      "CRITICAL": 6,
+      "SUPPORTIVE": 4,
+      "NEUTRAL": 8,
+      "crit_share": 0.333,
+      "labels": [
+        "NEUTRAL",
+        "SUPPORTIVE",
+        "CRITICAL",
+        "SUPPORTIVE",
+        "CRITICAL",
+        "CRITICAL",
+        "CRITICAL",
+        "CRITICAL",
+        "SUPPORTIVE",
+        "NEUTRAL",
+        "SUPPORTIVE",
+        "NEUTRAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "CRITICAL"
+      ]
+    },
+    {
+      "citationid": "4071724170",
+      "n": 11,
+      "CRITICAL": 3,
+      "SUPPORTIVE": 4,
+      "NEUTRAL": 4,
+      "crit_share": 0.273,
+      "labels": [
+        "SUPPORTIVE",
+        "CRITICAL",
+        "NEUTRAL",
+        "CRITICAL",
+        "SUPPORTIVE",
+        "NEUTRAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "SUPPORTIVE",
+        "CRITICAL",
+        "SUPPORTIVE"
+      ]
+    },
+    {
+      "citationid": "4110977819",
+      "n": 10,
+      "CRITICAL": 2,
+      "SUPPORTIVE": 5,
+      "NEUTRAL": 3,
+      "crit_share": 0.2,
+      "labels": [
+        "CRITICAL",
+        "CRITICAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "SUPPORTIVE",
+        "SUPPORTIVE",
+        "SUPPORTIVE",
+        "NEUTRAL",
+        "SUPPORTIVE",
+        "SUPPORTIVE"
+      ]
+    },
+    {
+      "citationid": "4162460421",
+      "n": 10,
+      "CRITICAL": 1,
+      "SUPPORTIVE": 2,
+      "NEUTRAL": 7,
+      "crit_share": 0.1,
+      "labels": [
+        "NEUTRAL",
+        "NEUTRAL",
+        "SUPPORTIVE",
+        "NEUTRAL",
+        "CRITICAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "NEUTRAL",
+        "SUPPORTIVE",
+        "NEUTRAL"
+      ]
+    },
+    {
+      "citationid": "4458543806",
+      "n": 9,
+      "CRITICAL": 2,
+      "SUPPORTIVE": 4,
+      "NEUTRAL": 3,
+      "crit_share": 0.222,
+      "labels": [
+        "CRITICAL",
+        "NEUTRAL",
+        "SUPPORTIVE",
+        "NEUTRAL",
+        "SUPPORTIVE",
+        "SUPPORTIVE",
+        "SUPPORTIVE",
+        "NEUTRAL",
+        "CRITICAL"
+      ]
+    }
+  ],
+  "totals": {
+    "NEUTRAL": 64,
+    "SUPPORTIVE": 34,
+    "CRITICAL": 30
+  }
+}
