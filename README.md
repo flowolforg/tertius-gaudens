@@ -1,5 +1,7 @@
 # tertius-gaudens
 
+📄 **[Read the paper (PDF)](Where-should-the-AI-scientist-land.pdf)** · Reference app: [flowolf.org](https://flowolf.org)
+
 **Mining scientific disagreement to time research entry.**
 
 This repository accompanies the paper [*Where Should The AI Scientist Land, and When?*](PAPER.md) — the title a deliberate counterpoint to *The AI Scientist* (Sakana AI, *Nature* 2026). It contains every script and intermediate data dump needed to reproduce the empirical claims, so that others can check the findings independently.
